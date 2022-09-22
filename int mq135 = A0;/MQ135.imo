@@ -1,5 +1,12 @@
+/*
+This is the simplest sketch to detect / sense gases like ammonia nitrogen, oxygen, alcohols, aromatic compounds, sulfide, and smoke 
+with MQ135 and micro-controller MCU8266. 
 
-int mq135 = A0; // smoke sensor is connected with the analog pin A0 
+The analog readings for clean air was between 71 to 90. When exposed to alochoal (Old Spice etc :)),  the reading shot up to 500 to 700. 
+ 
+*/
+
+int mq135 = A0; // smoke sensor MQ135 is connected with the analog pin A0 
 int data = 0; 
 void setup() 
 {
@@ -9,8 +16,8 @@ void setup()
 void loop() 
 {
   
-  data = analogRead(mq135); 
-  Serial.println(data);
+  data = analogRead(mq135);   // read MQ135 data into analog pin A0 
+  Serial.println(data);       // display result on console / Serial Monitor 
   delay(2000);  
 
 }
